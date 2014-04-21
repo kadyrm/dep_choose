@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    <title>Gazi Üniversitesi Tercih Robotu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+        .banner{
+
+            background-color:#FFF;
+            position:relative;
+            margin-left:auto;
+            margin-right:auto;
+            top:0;
+
+        }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <!-- <div class="navbar navbar-inverse navbar-fixed-top">
+             <div class="navbar-inner">
+                 <div class="container">
+     
+                     
+     
+                 </div>
+             </div>
+         </div>-->
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background:url(img/tk.png) 0px -4px;background-repeat:repeat-x;">
+        <div class="container" >
+            <div class="banner">
+                <img src="img/banner.png" />
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top:-40px" class="container" >
+        <div class="row" >
+            <div class="span3">
+            
+                <form action="index.php" method="POST">
+                    <fieldset>
+                        <legend>Puan Sorgula</legend>
+                        <label>Toplam puanınızı giriniz : </label>
+                        <input style="width:200px;" name="puan" type="text" value="400"/>
+                        <label>Puan türü seçiniz : </label>
+                        <select style="width:200px;" size="18" name="puan_tur[]" multiple>
+                            <option value="0">Tümü</option>
+                            <option >DİL-1</option><option >DİL-3</option><option >MF-1</option><option >MF-2</option><option >MF-3</option><option >MF-4</option><option >TM-1</option><option >TM-2</option><option >TM-3</option><option >TS-1</option><option >TS-2</option><option >YGS-1</option><option >YGS-2</option><option >YGS-3</option><option >YGS-4</option><option >YGS-5</option><option >YGS-6</option>                        </select>
+                        <p>
+                            <label class='radio inline'>
+                        <input checked type='radio' name='lisans_tur' value='0'>
+                            Tümü
+                    </label><label class='radio inline'>
+                        <input  type='radio' name='lisans_tur' value='1'>
+                            Lisans
+                    </label><label class='radio inline'>
+                        <input  type='radio' name='lisans_tur' value='2'>
+                            Önlisans
+                    </label>                        </p>
+                        <button name="submit" type="submit" class="btn">Sorgula</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="span9">
+                <div class="alert alert-info">2013 ÖSYS sonuçlarına göre puanınızın %5 fazlasına göre tercih edebileceğiniz bölümler : </div>
+                <table class='table table-striped'><tr>
+                <th>Fakülte/Y.Okul</th>
+                <th>Program Kodu</th>
+                <th>Program Adı</th>
+                <th style='width:50px;text-align:center;'>Puan Türü</th>
+                <th style='text-align:center;'>Kontenjan</th>
+                <th style='text-align:center;'>Yerleşen Aday</th>
+                <th>Min Puan</th>
+                <th>Max Puan</th>
+                <th>Program Türü</th>
+                </tr><tr>
+                    <td><a href='http://gef.gazi.edu.tr/' target='_blank'>Gazi Eğitim Fakültesi</a></td>
+                    <td>104110333</td>
+                    <td><a href='http://gef-egitimbilimleri-pdr.gazi.edu.tr/' target='_blank'>Rehberlik ve Psikolojik Danışmanlık</a></td>
+                    <td style='text-align:center;'>TM-3</td>
+                    <td style='text-align:center;'>67</td>
+                    <td style='text-align:center;'>67</td>
+                    <td style='text-align:right;'>418,231</td><td style='text-align:right;'>436,190</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://mf.gazi.edu.tr/' target='_blank'>Mühendislik Fakültesi</a></td>
+                    <td>104110633</td>
+                    <td><a href='http://mf-eem.gazi.edu.tr/' target='_blank'>Elektrik-Elektronik Mühendisliği</a></td>
+                    <td style='text-align:center;'>MF-4</td>
+                    <td style='text-align:center;'>82</td>
+                    <td style='text-align:center;'>82</td>
+                    <td style='text-align:right;'>417,352</td><td style='text-align:right;'>438,477</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://gef.gazi.edu.tr/' target='_blank'>Gazi Eğitim Fakültesi</a></td>
+                    <td>104110281</td>
+                    <td><a href='http://gef-ozelegitim-gormeengelliler.gazi.edu.tr/' target='_blank'>Görme Engelliler Öğretmenliği</a></td>
+                    <td style='text-align:center;'>YGS-4</td>
+                    <td style='text-align:center;'>57</td>
+                    <td style='text-align:center;'>57</td>
+                    <td style='text-align:right;'>414,933</td><td style='text-align:right;'>458,702</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://gef.gazi.edu.tr/' target='_blank'>Gazi Eğitim Fakültesi</a></td>
+                    <td>104111216</td>
+                    <td><a href='http://gef-ilkogretim-okuloncesi.gazi.edu.tr/' target='_blank'>Okul Öncesi Öğretmenliği</a></td>
+                    <td style='text-align:center;'>YGS-5</td>
+                    <td style='text-align:center;'>88</td>
+                    <td style='text-align:center;'>88</td>
+                    <td style='text-align:right;'>411,023</td><td style='text-align:right;'>474,911</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://turizm.gazi.edu.tr/' target='_blank'>Turizm Fakültesi</a></td>
+                    <td>104111428</td>
+                    <td><a href='http://turizm-gastronomi.gazi.edu.tr/' target='_blank'>Gastronomi ve Mutfak Sanatları (M.T.O.K.)</a></td>
+                    <td style='text-align:center;'>YGS-4</td>
+                    <td style='text-align:center;'>21</td>
+                    <td style='text-align:center;'>21</td>
+                    <td style='text-align:right;'>359,426</td><td style='text-align:right;'>397,176</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td>Polatlı Fen-Edebiyat Fakültesi</td>
+                    <td>104111552</td>
+                    <td><a href='http://edebiyat-turkdili.gazi.edu.tr/' target='_blank'>Türk Dili ve Edebiyatı</a></td>
+                    <td style='text-align:center;'>TS-2</td>
+                    <td style='text-align:center;'>47</td>
+                    <td style='text-align:center;'>47</td>
+                    <td style='text-align:right;'>356,664</td><td style='text-align:right;'>419,102</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://ilet.gazi.edu.tr/' target='_blank'>İletişim Fakültesi</a></td>
+                    <td>104110493</td>
+                    <td><a href='http://ilet.gazi.edu.tr/posts/view/title/gazetecilik-11474' target='_blank'>Gazetecilik</a></td>
+                    <td style='text-align:center;'>TS-1</td>
+                    <td style='text-align:center;'>77</td>
+                    <td style='text-align:center;'>77</td>
+                    <td style='text-align:right;'>356,008</td><td style='text-align:right;'>406,593</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://ankaramyo.gazi.edu.tr/' target='_blank'>Ankara Meslek Yüksekokulu</a></td>
+                    <td>104150792</td>
+                    <td>Giyim Üretim Teknolojisi</td>
+                    <td style='text-align:center;'>YGS-1</td>
+                    <td style='text-align:center;'>60</td>
+                    <td style='text-align:center;'>60</td>
+                    <td style='text-align:right;'>351,600</td><td style='text-align:right;'>-</td>
+                    <td style='text-align:center;'>Önlisans</td>
+                </tr><tr>
+                    <td><a href='http://ankaramyo.gazi.edu.tr/' target='_blank'>Ankara Meslek Yüksekokulu</a></td>
+                    <td>104150817</td>
+                    <td>Saç Bakımı ve Güzellik Hizmetleri</td>
+                    <td style='text-align:center;'>YGS-4</td>
+                    <td style='text-align:center;'>60</td>
+                    <td style='text-align:center;'>60</td>
+                    <td style='text-align:right;'>350,650</td><td style='text-align:right;'>-</td>
+                    <td style='text-align:center;'>Önlisans</td>
+                </tr><tr>
+                    <td><a href='http://iibf.gazi.edu.tr/' target='_blank'>İktisadi ve İdari Bilimler Fakültesi</a></td>
+                    <td>104110475</td>
+                    <td><a href='http://iibf.gazi.edu.tr/posts/view/title/maliye-3624' target='_blank'>Maliye</a></td>
+                    <td style='text-align:center;'>TM-1</td>
+                    <td style='text-align:center;'>149</td>
+                    <td style='text-align:center;'>149</td>
+                    <td style='text-align:right;'>350,552</td><td style='text-align:right;'>379,020</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://tf.gazi.edu.tr/' target='_blank'>Teknoloji Fakültesi</a></td>
+                    <td>104111349</td>
+                    <td><a href='http://tf-esm.gazi.edu.tr/' target='_blank'>Enerji Sistemleri Mühendisliği</a></td>
+                    <td style='text-align:center;'>MF-4</td>
+                    <td style='text-align:center;'>48</td>
+                    <td style='text-align:center;'>48</td>
+                    <td style='text-align:right;'>349,924</td><td style='text-align:right;'>387,756</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://ankaramyo.gazi.edu.tr/' target='_blank'>Ankara Meslek Yüksekokulu</a></td>
+                    <td>104150765</td>
+                    <td>Bilgisayar Programcılığı</td>
+                    <td style='text-align:center;'>YGS-1</td>
+                    <td style='text-align:center;'>30</td>
+                    <td style='text-align:center;'>30</td>
+                    <td style='text-align:right;'>349,600</td><td style='text-align:right;'>-</td>
+                    <td style='text-align:center;'>Önlisans</td>
+                </tr><tr>
+                    <td>Polatlı Fen-Edebiyat Fakültesi</td>
+                    <td>104111543</td>
+                    <td><a href='http://tarih.gazi.edu.tr/' target='_blank'>Tarih</a></td>
+                    <td style='text-align:center;'>TS-2</td>
+                    <td style='text-align:center;'>47</td>
+                    <td style='text-align:center;'>47</td>
+                    <td style='text-align:right;'>349,479</td><td style='text-align:right;'>366,828</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://gef.gazi.edu.tr/' target='_blank'>Gazi Eğitim Fakültesi</a></td>
+                    <td>104110342</td>
+                    <td><a href='http://gef-ilkogretim-sinifogretmenligi.gazi.edu.tr/' target='_blank'>Sınıf Öğretmenliği</a></td>
+                    <td style='text-align:center;'>TM-2</td>
+                    <td style='text-align:center;'>118</td>
+                    <td style='text-align:center;'>118</td>
+                    <td style='text-align:right;'>349,313</td><td style='text-align:right;'>416,463</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://edebiyat.gazi.edu.tr/' target='_blank'>Edebiyat Fakültesi</a></td>
+                    <td>104110087</td>
+                    <td><a href='http://cagdas_turk.gazi.edu.tr/' target='_blank'>Çağdaş Türk Lehçeleri ve Edebiyatları</a></td>
+                    <td style='text-align:center;'>TS-2</td>
+                    <td style='text-align:center;'>57</td>
+                    <td style='text-align:center;'>57</td>
+                    <td style='text-align:right;'>347,863</td><td style='text-align:right;'>392,478</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://iibf.gazi.edu.tr/' target='_blank'>İktisadi ve İdari Bilimler Fakültesi</a></td>
+                    <td>104130188</td>
+                    <td><a href='http://iibf.gazi.edu.tr/posts/view/title/uluslararasi-iliskiler-3625' target='_blank'>Uluslararası İlişkiler (İÖ)</a></td>
+                    <td style='text-align:center;'>TM-2</td>
+                    <td style='text-align:center;'>108</td>
+                    <td style='text-align:center;'>108</td>
+                    <td style='text-align:right;'>346,530</td><td style='text-align:right;'>370,403</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://tkyo.gazi.edu.tr/' target='_blank'>Tapu Kadastro Yüksekokulu</a></td>
+                    <td>104111667</td>
+                    <td><a href='http://tkyo.gazi.edu.tr/posts/view/title/tapu-kadastro-59914' target='_blank'>Tapu Kadastro</a></td>
+                    <td style='text-align:center;'>YGS-6</td>
+                    <td style='text-align:center;'>47</td>
+                    <td style='text-align:center;'>47</td>
+                    <td style='text-align:right;'>345,117</td><td style='text-align:right;'>443,278</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://shmyo.gazi.edu.tr/' target='_blank'>Sağlık Hizmetleri Meslek Y.O.</a></td>
+                    <td>104150086</td>
+                    <td><a href='http://shmyo.gazi.edu.tr/posts/view/title/tibbi-dokumantasyon-ve-sekreterlik-28580' target='_blank'>Tıbbi Dokümantasyon ve Sekreterlik</a></td>
+                    <td style='text-align:center;'>YGS-3</td>
+                    <td style='text-align:center;'>50</td>
+                    <td style='text-align:center;'>50</td>
+                    <td style='text-align:right;'>344,950</td><td style='text-align:right;'>-</td>
+                    <td style='text-align:center;'>Önlisans</td>
+                </tr><tr>
+                    <td>Güzel Sanatlar Fakültesi</td>
+                    <td>104111755</td>
+                    <td>Fotoğraf ve Video</td>
+                    <td style='text-align:center;'>TS-1</td>
+                    <td style='text-align:center;'>16</td>
+                    <td style='text-align:center;'>16</td>
+                    <td style='text-align:right;'>344,664</td><td style='text-align:right;'>409,084</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://iibf.gazi.edu.tr/' target='_blank'>İktisadi ve İdari Bilimler Fakültesi</a></td>
+                    <td>104111773</td>
+                    <td>Sağlık Kurumları İşletmeciliği</td>
+                    <td style='text-align:center;'>TM-1</td>
+                    <td style='text-align:center;'>52</td>
+                    <td style='text-align:center;'>52</td>
+                    <td style='text-align:right;'>343,550</td><td style='text-align:right;'>372,407</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://sbf.gazi.edu.tr/' target='_blank'>Sağlık Bilimleri Fakültesi</a></td>
+                    <td>104111225</td>
+                    <td><a href='http://sbf.gazi.edu.tr/posts/view/title/hemsirelik-bolumu-8783' target='_blank'>Hemşirelik</a></td>
+                    <td style='text-align:center;'>MF-3</td>
+                    <td style='text-align:center;'>308</td>
+                    <td style='text-align:center;'>308</td>
+                    <td style='text-align:right;'>340,847</td><td style='text-align:right;'>414,220</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://bankacilik.gazi.edu.tr/' target='_blank'>Bankacılık ve Sigortacılık Yüksekokulu</a></td>
+                    <td>104111588</td>
+                    <td><a href='http://bankacilik.gazi.edu.tr/posts/view/title/bankacilik-bolumu-9918' target='_blank'>Bankacılık</a></td>
+                    <td style='text-align:center;'>YGS-6</td>
+                    <td style='text-align:center;'>36</td>
+                    <td style='text-align:center;'>36</td>
+                    <td style='text-align:right;'>340,549</td><td style='text-align:right;'>415,011</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://iibf.gazi.edu.tr/' target='_blank'>İktisadi ve İdari Bilimler Fakültesi</a></td>
+                    <td>104110448</td>
+                    <td><a href='http://iibf.gazi.edu.tr/posts/view/title/iktisat-3786' target='_blank'>İktisat</a></td>
+                    <td style='text-align:center;'>TM-1</td>
+                    <td style='text-align:center;'>170</td>
+                    <td style='text-align:center;'>170</td>
+                    <td style='text-align:right;'>340,523</td><td style='text-align:right;'>389,925</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://mim.gazi.edu.tr/' target='_blank'>Mimarlık Fakültesi</a></td>
+                    <td>104110696</td>
+                    <td><a href='http://mim-sbp.gazi.edu.tr/' target='_blank'>Şehir ve Bölge Planlama</a></td>
+                    <td style='text-align:center;'>MF-4</td>
+                    <td style='text-align:center;'>67</td>
+                    <td style='text-align:center;'>67</td>
+                    <td style='text-align:right;'>334,700</td><td style='text-align:right;'>369,482</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://besyo.gazi.edu.tr/' target='_blank'>Beden Eğitimi ve Spor Yüksekokulu</a></td>
+                    <td>104111676</td>
+                    <td><a href='http://besyo.gazi.edu.tr/posts/view/title/spor-yoneticiligi-2814' target='_blank'>Spor Yöneticiliği</a></td>
+                    <td style='text-align:center;'>YGS-5</td>
+                    <td style='text-align:center;'>47</td>
+                    <td style='text-align:center;'>47</td>
+                    <td style='text-align:right;'>333,063</td><td style='text-align:right;'>387,915</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://iibf.gazi.edu.tr/' target='_blank'>İktisadi ve İdari Bilimler Fakültesi</a></td>
+                    <td>104110457</td>
+                    <td><a href='http://iibf.gazi.edu.tr/posts/view/title/isletme-3621' target='_blank'>İşletme</a></td>
+                    <td style='text-align:center;'>TM-1</td>
+                    <td style='text-align:center;'>175</td>
+                    <td style='text-align:center;'>175</td>
+                    <td style='text-align:right;'>329,583</td><td style='text-align:right;'>367,751</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://stf.gazi.edu.tr/' target='_blank'>Sanat ve Tasarım Fakültesi</a></td>
+                    <td>104111394</td>
+                    <td><a href='http://stf-grafik.gazi.edu.tr/' target='_blank'>Grafik Tasarımı (M.T.O.K.)</a></td>
+                    <td style='text-align:center;'>YGS-5</td>
+                    <td style='text-align:center;'>22</td>
+                    <td style='text-align:center;'>22</td>
+                    <td style='text-align:right;'>329,469</td><td style='text-align:right;'>375,947</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr><tr>
+                    <td><a href='http://atamyo.gazi.edu.tr/' target='_blank'>Atatürk Meslek Yüksekokulu</a></td>
+                    <td>104150544</td>
+                    <td><a href='http://atamyo.gazi.edu.tr/posts/view/title/kimya-programi-25257' target='_blank'>Kimya Teknolojisi</a></td>
+                    <td style='text-align:center;'>YGS-2</td>
+                    <td style='text-align:center;'>130</td>
+                    <td style='text-align:center;'>130</td>
+                    <td style='text-align:right;'>325,650</td><td style='text-align:right;'>-</td>
+                    <td style='text-align:center;'>Önlisans</td>
+                </tr><tr>
+                    <td><a href='http://atamyo.gazi.edu.tr/' target='_blank'>Atatürk Meslek Yüksekokulu</a></td>
+                    <td>104150474</td>
+                    <td><a href='http://atamyo.gazi.edu.tr/posts/view/title/makine-programi-25238' target='_blank'>Makine</a></td>
+                    <td style='text-align:center;'>YGS-1</td>
+                    <td style='text-align:center;'>150</td>
+                    <td style='text-align:center;'>150</td>
+                    <td style='text-align:right;'>324,850</td><td style='text-align:right;'>-</td>
+                    <td style='text-align:center;'>Önlisans</td>
+                </tr><tr>
+                    <td><a href='http://edebiyat.gazi.edu.tr/' target='_blank'>Edebiyat Fakültesi</a></td>
+                    <td>104110157</td>
+                    <td><a href='http://sanat_tarihi.gazi.edu.tr/' target='_blank'>Sanat Tarihi</a></td>
+                    <td style='text-align:center;'>TS-2</td>
+                    <td style='text-align:center;'>57</td>
+                    <td style='text-align:center;'>57</td>
+                    <td style='text-align:right;'>323,780</td><td style='text-align:right;'>362,001</td>
+                    <td style='text-align:center;'>Lisans</td>
+                </tr></table>            </div>
+        </div>
+        <footer>
+        <p style="text-align: center">&copy; Gazi Üniversitesi 2013</p>
+      </footer>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/js/jquery.js"></script>
+<!--    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>-->
+
+</body>
+</html>
+
+
