@@ -65,12 +65,7 @@
                         </label>
                         <input style="width:200px;" name="puan" type="text" value="0"/><br>
                         <label><br>Puan türü seçiniz : </label>
-                        <select style="width:200px;" size="4" name="puan_tur[]" multiple>
-                            <option value="0">Tümü</option>
-                            <option >Sayisal</option>
-                            <option >Sozlu</option>
-                            <option >EA</option>
-                        </select>
+                        
                         <p>
                         <label class='radio inline'>
                         <input checked type='radio' name='exam_type' value='0'>

@@ -40,7 +40,7 @@ function start(){
                 $exam_type = "EA";
                 break;
         }
-       echo $exam_type;
+       //echo $exam_type;
        run1($input_score, $exam_type);        
     }
         
