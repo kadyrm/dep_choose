@@ -48,8 +48,8 @@ function start(){
 } 
 function run2($score, $exam_type){
     
-$username = "root";
-$password = "";
+$username = "kadyrm";
+$password = "123";
 $hostname = "localhost";
 $dbname = "ktmu"; 
 $tblname = "quota_and_score_minmax";
@@ -69,9 +69,9 @@ mysql_close($dbhandle);
 }
 function run($arg_1){
     
-$username = "root";
-$password = "";
-$hostname = "localhost";
+$username = "kadyrm";
+$password = "123";
+$hostname = "local";
 $dbname = "ktmu"; 
 $tblname = "quota_and_score_minmax";
 $dbhandle =NULL;

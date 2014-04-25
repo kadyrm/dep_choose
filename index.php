@@ -48,7 +48,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" style="background:url(img/tk.png) 0px -4px;background-repeat:repeat-x;">
         <div class="container" >
             <div class="banner">
-                <img src="img/banner.png" />
+                <img src="/img/banner.png" />
                 
             </div>
         </div>
@@ -58,7 +58,7 @@
         <div class="row" >
             <div class="span3">
             <div class="alert alert-info">Tercih Robotu </div>
-                <form action="action_2.php" method="POST">
+                <form action="action_4.php" method="POST">
                     <fieldset>
                         <legend>Puan Sorgula</legend>
                         <label>Toplam puanınızı giriniz :                        
@@ -76,7 +76,7 @@
                         </label>
                         <label class='radio inline'>
                         <input  type='radio' name='exam_type' value='2'>
-                            Exact Sciences
+                            Natural Sciences
                         </label>
                         <label class='radio inline'>
                         <input  type='radio' name='exam_type' value='3'>
@@ -88,24 +88,10 @@
                 </form>
             </div>
             <div class="span9">
-                <div class="alert alert-info">2013 ÖSYS sonuçlarına göre puanınızın %5 fazlasına göre tercih edebileceğiniz bölümler : </div>
-                <table class='table table-striped'><tr>
-                <th>Fakülte/Y.Okul</th>
-                <th>Program Kodu</th>
-                <th>Program Adı</th>
-                <th style='width:50px;text-align:center;'>Puan Türü</th>
-                <th style='text-align:center;'>Kontenjan OSYS</th>
-                <th style='text-align:center;'>Kontenjan Manas</th>
                 
-                <th>Min Puan</th>
-                <th>Max Puan</th>
-                <th>Program Türü</th>
-                </tr>                             
-                </table>
-                </div>
         </div>
         <footer>
-        <p style="text-align: center">&copy; Manas University 2013</p>
+        <p style="text-align: center">&copy; Manas University 2014</p>
       </footer>
     </div> <!-- /container -->
 

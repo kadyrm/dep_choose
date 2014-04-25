@@ -48,7 +48,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" style="background:url(img/tk.png) 0px -4px;background-repeat:repeat-x;">
         <div class="container" >
             <div class="banner">
-                <img src="img/banner.png" />
+                <img src="/img/banner.png" />
                 
             </div>
         </div>
@@ -58,13 +58,14 @@
         <div class="row" >
             <div class="span3">
             <div class="alert alert-info">Tercih Robotu </div>
-                <form action="action_3.php" method="POST">
+                <form action="action_4.php" method="POST">
                     <fieldset>
                         <legend>Puan Sorgula</legend>
                         <label>Toplam puanınızı giriniz :                        
                         </label>
                         <input style="width:200px;" name="puan" type="text" value="0"/><br>
-                        <label><br>Puan türü seçiniz : </label>                                                
+                        <label><br>Puan türü seçiniz : </label>
+                        
                         <p>
                         <label class='radio inline'>
                         <input checked type='radio' name='exam_type' value='0'>
@@ -76,22 +77,30 @@
                         </label>
                         <label class='radio inline'>
                         <input  type='radio' name='exam_type' value='2'>
-                            Natural Sciences
+                            Exact Sciences
                         </label>
                         <label class='radio inline'>
                         <input  type='radio' name='exam_type' value='3'>
                             EA
                         </label>
-                        </p>                   
-                    <input type="submit" name="Puan Giris" title="Gonder">                        
+                        </p>                    
+                    <input type="submit" name="Puan Giriniz">                        
                     </fieldset>
                 </form>
             </div>
             <div class="span9">
+                <div class="alert alert-info">2013 Manas ÖSS sonuçlarına göre puanınızın %5 fazlasına göre tercih edebileceğiniz bölümler : </div>
                 
+                <?php                           
+                       //echo $_POST['puan'];
+                       include "lib6.php";
+                       start();         
+                ?>                 
+                
+                </div>
         </div>
         <footer>
-        <p style="text-align: center">&copy; Manas University 2013</p>
+        <p style="text-align: center">&copy; Manas University 2014</p>
       </footer>
     </div> <!-- /container -->
 

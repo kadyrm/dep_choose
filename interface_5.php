@@ -58,7 +58,7 @@
         <div class="row" >
             <div class="span3">
             <div class="alert alert-info">Tercih Robotu </div>
-                <form action="action_3.php" method="POST">
+                <form action="action_4.php" method="POST">
                     <fieldset>
                         <legend>Puan Sorgula</legend>
                         <label>Toplam puanınızı giriniz :                        

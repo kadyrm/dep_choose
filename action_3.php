@@ -64,7 +64,8 @@
                         <label>Toplam puanınızı giriniz :                        
                         </label>
                         <input style="width:200px;" name="puan" type="text" value="0"/><br>
-                        <label><br>Puan türü seçiniz : </label>                                                
+                        <label><br>Puan türü seçiniz : </label>
+                        
                         <p>
                         <label class='radio inline'>
                         <input checked type='radio' name='exam_type' value='0'>
@@ -76,19 +77,27 @@
                         </label>
                         <label class='radio inline'>
                         <input  type='radio' name='exam_type' value='2'>
-                            Natural Sciences
+                            Exact Sciences
                         </label>
                         <label class='radio inline'>
                         <input  type='radio' name='exam_type' value='3'>
                             EA
                         </label>
-                        </p>                   
-                    <input type="submit" name="Puan Giris" title="Gonder">                        
+                        </p>                    
+                    <input type="submit" name="Puan Giriniz">                        
                     </fieldset>
                 </form>
             </div>
             <div class="span9">
+                <div class="alert alert-info">2013 Manas ÖSS sonuçlarına göre puanınızın %5 fazlasına göre tercih edebileceğiniz bölümler : </div>
                 
+                <?php                           
+                       //echo $_POST['puan'];
+                       include "lib5.php";
+                       start();         
+                ?>                 
+                
+                </div>
         </div>
         <footer>
         <p style="text-align: center">&copy; Manas University 2013</p>
